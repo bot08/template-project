@@ -9,10 +9,18 @@
     </BaseCard>
     <BaseCard>
       <div class="p-4">
-        <BaseBigText>Also test card -><-</BaseBigText>
+        <BaseBigText>{{ $t('index.welcome') }} -><-</BaseBigText>
         <!-- Store Example -->
-        <BaseNormalText>Current Number: {{ numStore.num }}</BaseNormalText>
-        <button @click="updateNumber" class="active:scale-90 transition-transform">Num++</button>
+        <BaseNormalText>{{ $t('index.current_num') + numStore.num }}</BaseNormalText>
+        <button @click="updateNumber">Num++</button>
+      </div>
+    </BaseCard>
+    <BaseCard>
+      <div class="p-4">
+        <BaseBigText>{{ $t('index.locales') }}</BaseBigText>
+        <button @click="setLocale('en')" class="block">English</button>
+        <button @click="setLocale('uk')" class="block">Українська</button>
+        <button @click="setLocale('ja')" class="block">日本語</button>
       </div>
     </BaseCard>
   </div>
@@ -20,6 +28,8 @@
 
 
 <script setup>
+const { setLocale } = useI18n()
+
 definePageMeta({
   title: 'Index Page'
 })

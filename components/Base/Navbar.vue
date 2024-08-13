@@ -6,7 +6,7 @@
         <div class="flex items-center space-x-4">
           <!-- Logo + sitename -->
           <img class="h-8 w-8" src="/favicon.ico" alt="logo"/>
-          <BaseMediumText>SiteName</BaseMediumText>
+          <BaseMediumText>{{ $t('base.sitename') }}</BaseMediumText>
           <!-- Links -->
           <div>
             
@@ -16,7 +16,7 @@
         <div class="flex items-center space-x-4">
           <!-- Theme -->
           <Transition appear enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 scale-75">
-            <button @click="changeTheme()" class="active:scale-90 duration-150" v-if="hydrated && $colorMode.preference">
+            <button @click="changeTheme()" v-if="hydrated && $colorMode.preference">
               <ComputerDesktopIcon v-if="$colorMode.preference === 'system'" class="h-6 w-6"/>
               <SunIcon v-if="$colorMode.preference === 'light'" class="h-6 w-6"/>
               <MoonIcon v-if="$colorMode.preference === 'dark'" class="h-6 w-6"/>
@@ -27,7 +27,7 @@
             MD+ text
           </div>
           <!-- Mobile menu btn -->
-          <button class="block md:hidden active:scale-90 duration-150">
+          <button class="block md:hidden">
             <Bars4Icon class="h-8 w-8"/>
           </button>
         </div>

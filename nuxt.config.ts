@@ -20,7 +20,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
-    '@pinia/nuxt',
+    '@pinia/nuxt', 
+    "@nuxtjs/i18n",
   ],
 
   css: [
@@ -36,6 +37,18 @@ export default defineNuxtConfig({
 
   pinia: {
     storesDirs: ['./stores/**'],
+  },
+
+  i18n: {
+    locales: [
+      { code: 'en', iso: 'en-US', file: 'en.json' },
+      { code: 'uk', iso: 'uk-UA', file: 'uk.json' },
+      { code: 'ja', iso: 'ja-JP', file: 'ja.json' },
+    ],
+    defaultLocale: 'en',
+    lazy: true,
+    langDir: 'locales',
+    strategy: 'prefix',
   },
 
   routeRules: {
