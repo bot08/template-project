@@ -16,11 +16,13 @@
         <div class="flex items-center space-x-4">
           <!-- Theme -->
           <Transition appear enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 scale-75">
-            <button @click="changeTheme()" v-if="hydrated && $colorMode.preference">
-              <ComputerDesktopIcon v-if="$colorMode.preference === 'system'" class="h-6 w-6"/>
-              <SunIcon v-if="$colorMode.preference === 'light'" class="h-6 w-6"/>
-              <MoonIcon v-if="$colorMode.preference === 'dark'" class="h-6 w-6"/>
-            </button>
+            <BaseVisualFeedback v-if="hydrated && $colorMode.preference" class="w-8 h-8 flex items-center">
+              <button @click="changeTheme()">
+                <ComputerDesktopIcon v-if="$colorMode.preference === 'system'" class="h-6 w-6"/>
+                <SunIcon v-if="$colorMode.preference === 'light'" class="h-6 w-6"/>
+                <MoonIcon v-if="$colorMode.preference === 'dark'" class="h-6 w-6"/>
+              </button>
+            </BaseVisualFeedback>
           </Transition>
           <!-- md+ text -->
           <div class="hidden md:block">
@@ -28,7 +30,9 @@
           </div>
           <!-- Mobile menu btn -->
           <button class="block md:hidden">
-            <Bars4Icon class="h-8 w-8"/>
+            <BaseVisualFeedback>
+              <Bars4Icon class="h-8 w-8"/>
+            </BaseVisualFeedback>
           </button>
         </div>
       </div>
