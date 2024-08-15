@@ -5,12 +5,21 @@
         <!-- Left part -->
         <div class="flex items-center space-x-4">
           <!-- Logo + sitename -->
-          <img class="h-8 w-8" src="/favicon.ico" alt="logo"/>
-          <BaseMediumText>{{ $t('base.sitename') }}</BaseMediumText>
-          <!-- Links -->
-          <div>
-            
-          </div>
+          <NuxtLink :to="localePath('/')">
+            <BaseVisualFeedback class="flex items-center space-x-4">
+            <img class="h-8 w-8" src="/favicon.ico" alt="logo"/>
+            <BaseMediumText>{{ $t('base.sitename') }}</BaseMediumText>
+            </BaseVisualFeedback>
+          </NuxtLink>
+        </div>
+        <!-- Links (PC) -->
+        <div class="md:flex hidden items-center space-x-4">
+          <NuxtLink v-for="(item, index) in navigation" :key="index" :to="localePath(item.href)">
+            <BaseVisualFeedback class="flex items-center h-12">
+              <component :is="item.icon" class="w-6 h-6 mr-2"/>
+              <BaseMediumText>{{ item.name }}</BaseMediumText>
+            </BaseVisualFeedback>
+          </NuxtLink>
         </div>
         <!-- Right part -->
         <div class="flex items-center space-x-4">
@@ -42,7 +51,12 @@
 
 
 <script setup>
-import { Bars4Icon, ComputerDesktopIcon, SunIcon, MoonIcon } from '@heroicons/vue/24/solid'
+import { Bars4Icon, ComputerDesktopIcon, SunIcon, MoonIcon, HomeIcon, HomeModernIcon } from '@heroicons/vue/24/solid'
+
+const navigation = [
+  { name: 'Index', href: '/', icon: HomeIcon },
+  { name: 'page2', href: '/page2', icon: HomeModernIcon },
+]
 
 const hydrated = ref(false);
 

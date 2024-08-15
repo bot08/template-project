@@ -14,7 +14,9 @@
   </div>
 </template>
 
+
 <script setup>
+// todo: resize & make it more auto
 const slotContainer = ref(null)
 const isActive = ref(false)
 const reductionPx = 4
