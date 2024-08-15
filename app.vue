@@ -20,7 +20,7 @@ useHead({
     lang: locale.value
   },
   bodyAttrs: {
-    class: 'bg-gray-200 dark:bg-zinc-900 min-h-dvh transition-colors'
+    class: 'min-h-dvh overflow-y-scroll bg-gray-200 dark:bg-zinc-900 transition-colors'
   },
   link: [
     { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' }

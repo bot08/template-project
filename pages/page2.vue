@@ -1,8 +1,11 @@
 <template>
   <BaseCard>
     <div class="p-4">
-      <BaseBigText>Page 2</BaseBigText>
-      <NuxtLink to="/">Index page</NuxtLink>
+      <BaseBigText>Slots*</BaseBigText>
+      <TestSlots/>
+      <BaseVisualFeedback>
+        <NuxtLink to="/">Index page</NuxtLink>
+      </BaseVisualFeedback>
     </div>
   </BaseCard>
 </template>

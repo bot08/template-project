@@ -24,18 +24,18 @@
         <!-- Right part -->
         <div class="flex items-center space-x-4">
           <!-- Theme -->
-          <Transition appear enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 scale-75">
-            <BaseVisualFeedback v-if="hydrated && $colorMode.preference" class="w-8 h-8 flex items-center">
-              <button @click="changeTheme()">
+          <button @click="changeTheme()" class="w-6 h-6">
+            <Transition appear enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 scale-75">
+              <BaseVisualFeedback v-if="hydrated && $colorMode.preference">
                 <ComputerDesktopIcon v-if="$colorMode.preference === 'system'" class="h-6 w-6"/>
                 <SunIcon v-if="$colorMode.preference === 'light'" class="h-6 w-6"/>
                 <MoonIcon v-if="$colorMode.preference === 'dark'" class="h-6 w-6"/>
-              </button>
-            </BaseVisualFeedback>
-          </Transition>
+              </BaseVisualFeedback>
+            </Transition>
+          </button>
           <!-- md+ text -->
           <div class="hidden md:block">
-            MD+ text
+            Lang switch
           </div>
           <!-- Mobile menu btn -->
           <button class="block md:hidden">
