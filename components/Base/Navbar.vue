@@ -33,14 +33,14 @@
               </BaseVisualFeedback>
             </Transition>
           </button>
-          <!-- md+ text -->
-          <BaseNavbarLang/>
           <!-- Mobile menu btn -->
           <button class="block md:hidden">
             <BaseVisualFeedback>
               <Bars4Icon class="h-8 w-8"/>
             </BaseVisualFeedback>
           </button>
+          <!-- PC lang -->
+          <BaseNavbarLang/>
         </div>
       </div>
     </div>
