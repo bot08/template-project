@@ -1,6 +1,6 @@
 <template>
   <div class="fixed inset-x-0 z-40 shadow bg-white dark:bg-zinc-700 text-black-700 dark:text-white transition-colors">
-    <div class="px-6 md:px-8 mx-auto max-w-screen-2xl h-16">
+    <div class="px-6 md:px-12 mx-auto max-w-screen-2xl h-16">
       <div class="flex justify-between items-center h-full">
         <!-- Left part -->
         <div class="flex items-center space-x-4">
@@ -34,9 +34,7 @@
             </Transition>
           </button>
           <!-- md+ text -->
-          <div class="hidden md:block">
-            Lang switch
-          </div>
+          <BaseNavbarLang/>
           <!-- Mobile menu btn -->
           <button class="block md:hidden">
             <BaseVisualFeedback>
