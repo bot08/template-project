@@ -4,7 +4,6 @@
       <div class="flex justify-between items-center h-full">
         <!-- Left part -->
         <div class="flex items-center space-x-4">
-          <!-- Logo + sitename -->
           <NuxtLink :to="localePath('/')">
             <BaseVisualFeedback class="flex items-center space-x-4">
             <img class="h-8 w-8" src="/favicon.ico" alt="logo"/>
@@ -12,14 +11,9 @@
             </BaseVisualFeedback>
           </NuxtLink>
         </div>
-        <!-- Links (PC) -->
+        <!-- Central -->
         <div class="md:flex hidden items-center space-x-4">
-          <NuxtLink v-for="(item, index) in navigation" :key="index" :to="localePath(item.href)">
-            <BaseVisualFeedback class="flex items-center h-12">
-              <component :is="item.icon" class="w-6 h-6 mr-2"/>
-              <BaseMediumText>{{ item.name }}</BaseMediumText>
-            </BaseVisualFeedback>
-          </NuxtLink>
+          <BaseNavbarLink v-for="(item, index) in navigation" :key="index" :item="item"/>
         </div>
         <!-- Right part -->
         <div class="flex items-center space-x-4">
@@ -56,6 +50,24 @@ import { Bars4Icon, ComputerDesktopIcon, SunIcon, MoonIcon, HomeIcon, HomeModern
 const navigation = [
   { name: 'Index', href: '/', icon: HomeIcon },
   { name: 'page2', href: '/page2', icon: HomeModernIcon },
+  // test 1 open
+  [
+    { name: 'Index', href: '/', icon: HomeIcon },
+    { name: 'page2', href: '/page2', icon: HomeModernIcon },
+  ],
+  // goofy test
+  [
+    { name: 'Index))', href: '/', icon: HomeIcon },
+    { name: 'SPINS !', href: '/page2', icon: HomeModernIcon },
+    [
+      { name: 'Why a?', href: '/', icon: HomeIcon },
+      { name: 'B??????', href: '/page2', icon: HomeModernIcon },
+      [
+        { name: 'asdasdsa?', href: '/', icon: HomeIcon },
+        { name: 'aaaasasss!', href: '/page2', icon: HomeModernIcon },
+      ]
+    ]
+  ]
 ]
 
 const hydrated = ref(false);
