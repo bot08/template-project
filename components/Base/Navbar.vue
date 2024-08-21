@@ -28,13 +28,7 @@
             </Transition>
           </button>
           <div>
-            <!-- Mobile menu btn -->
-            <button class="block md:hidden">
-              <BaseVisualFeedback>
-                <Bars4Icon class="h-8 w-8"/>
-              </BaseVisualFeedback>
-            </button>
-            <!-- PC lang btn -->
+            <BaseNavbarMobile :items="navigation"/>
             <BaseNavbarLang/>
           </div>
         </div>
@@ -45,7 +39,7 @@
 
 
 <script setup>
-import { Bars4Icon, ComputerDesktopIcon, SunIcon, MoonIcon, HomeIcon, HomeModernIcon } from '@heroicons/vue/24/solid'
+import { ComputerDesktopIcon, SunIcon, MoonIcon, HomeIcon, HomeModernIcon } from '@heroicons/vue/24/solid'
 
 const navigation = [
   { name: 'Index', href: '/', icon: HomeIcon },
